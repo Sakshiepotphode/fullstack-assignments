@@ -1,0 +1,168 @@
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> Login Page </title>  
+<style>   
+Body {  
+  font-family: Open Sans, sans-serif;  
+  background-color: rgb(241, 234, 235);   
+}  
+button {   
+       background-color: #40ad9e;   
+       width: 40%; 
+       height: 20%; 
+        color: rgb(22, 22, 21);   
+        padding: 20px;   
+        margin: 15px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid #f1f1f1;   
+    }   
+ .t1 {   
+        width: 100%;   
+        margin: 15spx 0;  
+        padding: 15px 20px;   
+        display: inline-block;   
+        border: 3px solid rgb(9, 9, 9);   
+        box-sizing: border-box;   
+    }  
+ button:hover {   
+        background-color: rgb(0, 255, 170); 
+    }   
+  
+     
+ .container {   
+        padding: 45px;   
+        background-color: rgb(173, 230, 205);
+        border-radius:50px;
+        width: 250px;  
+        margin-left:600px;
+    }  
+</style>   
+</head>    
+<body>  
+    <form method="post">  
+        <div class="container">   
+            <label>Username : </label>   
+            <input type="text" placeholder="Enter Username" name="username"  class="t1" id="username" >  
+            <label>Password : </label>
+            <div class="input">
+                <input type="password" placeholder="Enter Password" name="password"  class="t1" id="password"  >
+            </div>   
+             
+            <div class="check">
+                <input type="checkbox" id="show" onclick="showPass()"><span>Show Password</span> 
+            </div>
+            
+            <button type="button" id="login" onclick="return checkLogin(), submitHandle()" value="Login">Login</button>      
+            <a href="./registration.html"  >  <button type="button" class="cancelbtn" id="SignUp" > SignUp</button>   </a>
+             
+        </div> 
+          
+    </form>  
+    <script>
+        function checkLogin()
+        {
+            var u=document.getElementById("username");
+            var p=document.getElementById("password");
+        
+            
+           if(u.value == ''){
+
+           
+                alert('Username Required')
+            }
+                else if  (p.value == ''){
+
+                    alert('Password Required');
+                }
+                else{
+                    alert('Login Successfully');
+                }
+            }
+        //     if(u.value ==''){
+        //         alert('UserName And Password Required')
+        //     }
+        //    else{
+        //     alert('Login Successfully')
+
+        //        }
+                    
+               function showPass(){
+            let check = document.getElementById("show");
+            let pass =document.getElementById("password");
+
+            if(check.checked==true){
+                pass.type='text';
+                check.nextElementSibling.innerHTML="hide password"
+            }
+            else{
+                pass.type='password';
+                check.nextElementSibling.innerHTML="show password"
+            }
+        }
+        
+
+        function submitHandle(){
+            var login=document.getElementById("login");
+
+            if(login.value== 'Login'){
+                var u=document.getElementById("username");
+                var p=document.getElementById("password");
+
+                if(u.value == '' && p.value ==''){
+                    alert("Enter username and password");
+                    u.style.border='2px solid red';
+                    u.style.backgroundColor='red';
+
+                    p.style.border='2px solid red';
+                    p.style.backgroundColor='red';
+                }
+                else if(u.value == '' && p.value !==''){
+                    alert("Enter username");
+                    u.style.border='2px solid red';
+                    u.style.backgroundColor='red';
+
+                    p.style.border='2px solid black';
+                    p.style.backgroundColor='';
+                } 
+                else if(u.value !== '' && p.value ==''){
+                    alert("Enter password");
+                    u.style.border='2px solid black';
+                    u.style.backgroundColor='';
+
+                    p.style.border='2px solid red';
+                    p.style.backgroundColor='red';
+                }
+                else{
+                    u.style.border='2px solid black';
+                    u.style.backgroundColor='';
+
+                    p.style.border='2px solid black';
+                    p.style.backgroundColor='';
+                }
+
+                u.addEventListener('input',function(){
+                    if(u.value !==''){
+                    u.style.border='2px solid black';
+                    u.style.backgroundColor='';
+                    }
+                })
+
+                p.addEventListener('input',function(){
+                    if(p.value !==''){
+                    p.style.border='2px solid black';
+                    p.style.backgroundColor='';
+                    }
+                })
+            }
+            return false;
+        }
+      
+      
+    </script> 
+</body>     
+</html>

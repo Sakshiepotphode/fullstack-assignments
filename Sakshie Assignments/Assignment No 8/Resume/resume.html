@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Website</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    
+    .profile-img {
+      max-width: 170px;
+      border-radius: 60%;
+    }
+    .btn btn-primary btn-block mb-3{
+        color: rgb(0, 136, 255);
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-3">
+        <button class="btn btn-primary btn-block mb-3" style="background-color: rgb(0, 255, 153);" onclick="showPersonalDetails()">Personal Details</button>
+        <button class="btn btn-success btn-block" onclick="showContactDetails()">Contact Details</button>
+      </div>
+      <div class="col-md-7">
+        <div id="personalDetails" style="display: none;">
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              Personal Details
+            </div>
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <img src="myphoto.jpg" alt="Profile Photo" class="profile-img">
+              </div>
+              <h3 class="card-title">Sakshi Prashant Potphode</h3>
+              <p class="card-text"><b>Address: </b>Ratnagiri</p>
+              <p class="card-text"><b>Date of Birth:</b> 07 Oct 2003</p>
+              <p class="card-text"><b>Career Objective :</b></Career> A highly driven computer science student seeking new challenges in the tech world to continue developing my
+                skills and applying the knowledge I have learned through my studies</p>
+              <p class="card-text"><b>Project Details 1. :</b> Online Auto Rickshaw Booking System</p>
+              <p class="card-text"><b>Project Details 2. :</b> Univercity Online Automation System</p>
+              <p class="card-text"><b>Skills : </b> C,Java,HTML-CSS,MySQL   </p>
+              
+            </div>
+          </div>
+        </div>
+        <div id="contactDetails" style="display: none;">
+          <div class="card">
+            <div class="card-header bg-success text-white">
+              Contact
+            </div>
+            <div class="card-body" >
+              <p class="card-text"><i class="fas fa-phone"></i> Phone Number:1234567890</p>
+              <p class="card-text"><i class="fas fa-envelope"></i> Email: potphode@gmail.com</p>
+              <p class="card-text"><i class="fas fa-envelope"></i> Pincode: 415612</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function showPersonalDetails() {
+      document.getElementById('personalDetails').style.display = 'block';
+      document.getElementById('contactDetails').style.display = 'none';
+    }
+
+    function showContactDetails() {
+      document.getElementById('personalDetails').style.display = 'none';
+      document.getElementById('contactDetails').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
